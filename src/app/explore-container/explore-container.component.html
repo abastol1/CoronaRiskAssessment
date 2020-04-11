@@ -1,10 +1,10 @@
 <div id="container">
-  <ion-grid>
-    <div id="language">
-      <ion-row>
-        <ion-text color="primary">भाषा छनोट गर्नुस</ion-text><br />
-      </ion-row>
-
+  <div class="chat">
+  
+    <div class="yours messages">
+      <div class="message">
+        भाषा छनोट गर्नुस
+      </div>
       <ion-row>
         <ion-button
           size="small"
@@ -22,17 +22,47 @@
         >
       </ion-row>
     </div>
-    <br />
-    <div id="langAns">
-      <ion-row class="response" float-right>
-        <ion-col>
-          <ion-text float-right>Nepali</ion-text>
-        </ion-col>
+    <div class="mine messages">
+      <div class="message">
+        Great thanks!
+      </div> 
+      <div class="message">
+        How about you?
+       </div>
+    </div>
+  </div>
+  <ion-grid>
+    <div id="language">
+      <ion-row class="information">
+        <ion-text color="primary">भाषा छनोट गर्नुस</ion-text><br />
+      </ion-row>
+
+      <ion-row>
+        <ion-button
+          size="small"
+          color="light"
+          (click)="languageClicked('Nepali')"
+          paddingxw
+          >Nepali</ion-button
+        >
+        <ion-button
+          size="small"
+          color="light"
+          (click)="languageClicked('English')"
+          padding
+          >English</ion-button
+        >
       </ion-row>
     </div>
     <br />
+    
+      <ion-row class="response">
+        <ion-col>
+          <ion-text>Nepali</ion-text>
+        </ion-col>
+      </ion-row>
+    <br />
 
-    <div id="ageQues">
       <ion-row>
         <ion-text>
           Hello! Our coronavirus disease self assessment scan has been developed
@@ -47,9 +77,7 @@
         </ion-text>
       </ion-row>
       <br />
-    </div>
-
-    <div id="ageInput">
+   
       <ion-row class="response">
         <ion-input
           id="userAge"
@@ -61,13 +89,10 @@
       <ion-row>
         <ion-button size="small" (click)="AgeInput()">Done</ion-button>
       </ion-row>
-    </div>
-
-    <div id="ageAns">
+   
       <ion-row class="response">
         <ion-text id="ageAnsText">Age: 22</ion-text>
       </ion-row>
-    </div>
 
     <div id="genderQues">
       <ion-row class="information">
