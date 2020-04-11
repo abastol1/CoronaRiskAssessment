@@ -1,0 +1,21 @@
+ion-image,
+img {
+  display: block;
+  margin: auto;
+}
+
+ion-card-title {
+  font-weight: bolder;
+}
+
+ion-label,
+ion-item {
+  line-height: 1;
+}
+
+::slotted(ion-label) {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+}

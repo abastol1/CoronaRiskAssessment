@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Risk Assessment Result</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card color="light" s>
+    <img src="{{imagelink}}" />
+    <ion-card-header>
+      <ion-card-subtitle>COVID 19 Risk Assessment Result</ion-card-subtitle>
+      <ion-card-title>{{ riskResult }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list *ngFor="let item of risk">
+        <ion-item class="ion-no-padding">
+          <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+          <ion-label class="ion-text-wrap">{{ item }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<!-- Close Button for Modal -->
+<ion-footer>
+  <ion-button expand="block" fill="solid" (click)="closeModal()">
+    Close
+  </ion-button>
+</ion-footer>
