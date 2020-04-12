@@ -1,392 +1,394 @@
 <div id="container">
   <div class="chat">
-  
     <div class="yours messages">
       <div class="message">
         भाषा छनोट गर्नुस
       </div>
-      <ion-row>
+      <div class="message">
         <ion-button
           size="small"
           color="light"
-          (click)="languageClicked('Nepali')"
+          (click)="languageClicked($event, 'Nepali')"
           padding
           >Nepali</ion-button
         >
         <ion-button
           size="small"
           color="light"
-          (click)="languageClicked('English')"
+          (click)="languageClicked($event, 'English')"
           padding
           >English</ion-button
         >
-      </ion-row>
+      </div>
     </div>
     <div class="mine messages">
       <div class="message">
-        Great thanks!
-      </div> 
+        English
+      </div>
+    </div>
+
+    <div class="yours messages">
       <div class="message">
-        How about you?
-       </div>
+        <ion-row>
+          <ion-text>
+            Hello! Begin Your Corona Self Assessment. This interaction should
+            not be taken as expert medical advice.
+          </ion-text>
+        </ion-row>
+      </div>
+      <div class="message">
+        <ion-row>
+          <ion-text padding>
+            How old are you?
+          </ion-text>
+        </ion-row>
+      </div>
     </div>
-  </div>
-  <ion-grid>
-    <div id="language">
-      <ion-row class="information">
-        <ion-text color="primary">भाषा छनोट गर्नुस</ion-text><br />
-      </ion-row>
 
-      <ion-row>
-        <ion-button
-          size="small"
-          color="light"
-          (click)="languageClicked('Nepali')"
-          paddingxw
-          >Nepali</ion-button
-        >
-        <ion-button
-          size="small"
-          color="light"
-          (click)="languageClicked('English')"
-          padding
-          >English</ion-button
-        >
-      </ion-row>
-    </div>
-    <br />
-    
-      <ion-row class="response">
-        <ion-col>
-          <ion-text>Nepali</ion-text>
-        </ion-col>
-      </ion-row>
-    <br />
-
-      <ion-row>
-        <ion-text>
-          Hello! Our coronavirus disease self assessment scan has been developed
-          on the basis of guidelines from the WHO and MHFW, Government of India.
-          This interaction should not be taken as expert medical advice.
-        </ion-text>
-      </ion-row>
-      <br />
-      <ion-row>
-        <ion-text padding>
-          How old are you?
-        </ion-text>
-      </ion-row>
-      <br />
-   
-      <ion-row class="response">
+    <div class="mine messages">
+      <div class="message">
         <ion-input
           id="userAge"
           [(ngModel)]="userage"
           type="number"
           placeholder="Enter your age."
         ></ion-input>
-      </ion-row>
-      <ion-row>
-        <ion-button size="small" (click)="AgeInput()">Done</ion-button>
-      </ion-row>
-   
-      <ion-row class="response">
-        <ion-text id="ageAnsText">Age: 22</ion-text>
-      </ion-row>
+      </div>
+      <ion-button size="small" (click)="AgeInput()">Done</ion-button>
+    </div>
 
-    <div id="genderQues">
-      <ion-row class="information">
-        <ion-text class="textArea">Please select your gender</ion-text>
-      </ion-row>
-      <ion-row class="information">
-        <ion-button size="small" color="light" (click)="GenderClicked('Female')"
+    <div class="mine messages">
+      <div class="message"></div>
+    </div>
+
+    <div class="yours messages">
+      <div class="message">
+        <ion-row class="information">
+          <ion-text class="textArea">Please select your gender</ion-text>
+        </ion-row>
+      </div>
+      <ion-row>
+        <ion-button
+          size="small"
+          color="light"
+          (click)="GenderClicked($event, 'Female')"
           >Female</ion-button
         >
-        <ion-button size="small" color="light" (click)="GenderClicked('Male')"
+        <ion-button
+          size="small"
+          color="light"
+          (click)="GenderClicked($event, 'Male')"
           >Male</ion-button
         >
-        <ion-button size="small" color="light" (click)="GenderClicked('Others')"
+        <ion-button
+          size="small"
+          color="light"
+          (click)="GenderClicked($event, 'Others')"
           >Others</ion-button
         >
       </ion-row>
     </div>
 
-    <div id="genderAns">
-      <ion-row class="response">
-        <ion-text id="gender">MALE</ion-text>
-      </ion-row>
-      <br />
+    <div class="mine messages">
+      <div class="message">
+        MALE
+      </div>
     </div>
 
-    <div id="temperatureQues">
-      <ion-row class="information">
-        <ion-text class="textArea"
-          >Please let us know your current body temperature in degree Fahrenheit
-          (Normal body temperature is 98.6°F):</ion-text
-        >
-      </ion-row>
-      <ion-row class="information">
+    <div class="yours messages">
+      <div class="message">
+        Please let us know your current body temperature in degree Fahrenheit
+        (Normal body temperature is 98.6°F):
+      </div>
+
+      <div class="message">
         <ion-button
-          (click)="TempClicked('Normal(96°F - 98.6°F)')"
+          (click)="TempClicked($event, 'Normal(96°F - 98.6°F)')"
           size="small"
           color="light"
           >Normal(96°F - 98.6°F)</ion-button
         >
-        <br />
         <ion-button
-          (click)="TempClicked('Fever (98.6°F - 102°F)')"
+          (click)="TempClicked($event, 'Fever (98.6°F - 102°F)')"
           size="small"
           color="light"
           >Fever (98.6°F - 102°F)</ion-button
         >
-        <br />
         <ion-button
-          (click)="TempClicked('High Fever (>102°F)')"
+          (click)="TempClicked($event, 'High Fever (>102°F)')"
           size="small"
           color="light"
           >High Fever (>102°F)</ion-button
         >
-        <br />
-        <ion-button size="small" color="light">Don't Know</ion-button>
-      </ion-row>
-    </div>
-
-    <div id="temperatureAnswer">
-      <ion-item class="response">
-        <ion-text id="temperature">
-          FEVER
-        </ion-text>
-      </ion-item>
-    </div>
-
-    <div id="symptoms">
-      <ion-row class="information">
-        <ion-text class="textArea">
-          Are you experiencing any of the symptoms below (mark all those
-          applicable)
-        </ion-text>
-      </ion-row>
-      <ion-row class="information">
-        <ion-button size="small" color="light">Dry Cough</ion-button>
-        <br />
-        <ion-button size="small" color="light"
-          >Loss or diminished sense of smell</ion-button
+        <ion-button
+          size="small"
+          color="light"
+          (click)="TempClicked($event, 'Dont know')"
+          >Don't Know</ion-button
         >
-        <ion-button size="small" color="light">Sore Throat</ion-button>
-        <br />
-        <ion-button size="small" color="light">Weakness</ion-button>
-        <ion-button size="small" color="light">Weakness</ion-button>
-        <ion-button size="small" color="light">Change in Appetite</ion-button>
-        <ion-button size="small" color="light">None of these</ion-button>
-      </ion-row>
+      </div>
     </div>
 
-    <div id="symptomAns">
-      <ion-row class="response">
-        <ion-text id="symptomsText">
-          Dry Cough, Loss or diminished sense of smell</ion-text
+    <div class="mine messages">
+      <div class="message">
+        FEVER
+      </div>
+    </div>
+
+    <div class="yours messages">
+      <div class="message">
+        Are you experiencing any of the symptoms below (mark all those
+        applicable)
+      </div>
+      <div class="message">
+        <!-- <ion-row class="information"> -->
+        <ion-button
+          size="small"
+          color="light"
+          (click)="SymptomClicked($event, 'Cough')"
+          >Cough</ion-button
         >
-      </ion-row>
+        <ion-button
+          size="small"
+          color="light"
+          (click)="SymptomClicked($event, 'Tiredness')"
+          >Tiredness</ion-button
+        >
+        <!-- <ion-button
+            size="small"
+            color="light"
+            (click)="SymptomClicked('Difficult Breathing')"
+            >Difficult Breathing</ion-button
+          > -->
+        <ion-button
+          id="confirmSymptom"
+          size="small"
+          color="light"
+          (click)="SymptomConfirmed($event)"
+          >None of these</ion-button
+        >
+        <!-- </ion-row> -->
+      </div>
     </div>
 
-    <!-- <ion-row>
-      <ion-button id="modalButton" size="small" (click)="ShowModal()"
-        >Show Modal</ion-button
-      >
-    </ion-row> -->
-  </ion-grid>
-  <ion-footer>
-    <ion-button expand="block" fill="solid" (click)="closeModal()">
-      Close
+    <div class="mine messages">
+      <div class="message"></div>
+    </div>
+
+    <div class="yours messages">
+      <div class="message">
+        <ion-text>
+          Additionally, please verify if you are experiencing any of the
+          symptoms below (mark all those applicable)
+        </ion-text>
+      </div>
+      <div class="message">
+        <ion-button
+          size="small"
+          color="light"
+          (click)="AdditionalSymp($event, 'Difficulty in Breathing')"
+          >Difficulty in Breathing</ion-button
+        >
+        <!-- <ion-button size="small" color="light">
+          Blush Lip </ion-button
+        > -->
+        <ion-button
+          size="small"
+          color="light"
+          (click)="AdditionalSymp($event, 'Air Hunger')"
+        >
+          Air Hunger</ion-button
+        >
+        <ion-button
+          size="small"
+          color="light"
+          (click)="
+            AdditionalSymp($event, 'Persistant Pain and Pressure in Chest')
+          "
+        >
+          Persistant Pain and Pressure in Chest</ion-button
+        >
+        <ion-button
+          size="small"
+          color="light"
+          (click)="AdditionalSymp($event, 'Severe Weakness')"
+        >
+          Severe Weakness</ion-button
+        >
+        <ion-button
+          id="ConfirmAddSymp"
+          size="small"
+          color="light"
+          (click)="ConfirmAdditionalSymp($event)"
+        >
+          None of these</ion-button
+        >
+      </div>
+    </div>
+
+    <div class="mine messages">
+      <div class="message"></div>
+    </div>
+
+    <div class="yours messages">
+      <div class="message">
+        Please select your travel and exposure details
+      </div>
+
+      <div class="message">
+        <ion-row>
+          <ion-button
+            size="small"
+            color="light"
+            (click)="History($event, 'No Travel History')"
+          >
+            No Travel History</ion-button
+          >
+          <ion-button
+            size="small"
+            color="light"
+            c
+            (click)="
+              History(
+                $event,
+                'History of travel in affected geographical area in last 14
+          days'
+              )
+            "
+          >
+            History of travel in affected geographical area in last 14
+            days</ion-button
+          >
+          <ion-button
+            size="small"
+            color="light"
+            (click)="
+              History(
+                $event,
+                'Close Contact with confirmed COVID in last 14 days'
+              )
+            "
+          >
+            Close Contact with confirmed COVID in last 14 days</ion-button
+          >
+        </ion-row>
+      </div>
+    </div>
+
+    <div class="mine messages">
+      <div class="message"></div>
+    </div>
+
+    <div class="yours messages">
+      <div class="message">
+        Do you have a history of any of these conditions (mark all those
+        applicable)
+      </div>
+
+      <div class="message">
+        <ion-button
+          size="small"
+          color="light"
+          (click)="DiseaseClicked($event, 'Diabetes')"
+        >
+          Diabetes</ion-button
+        >
+        <ion-button
+          size="small"
+          color="light"
+          (click)="DiseaseClicked($event, 'High Blood Pressure')"
+        >
+          High Blood Pressure</ion-button
+        >
+        <ion-button
+          size="small"
+          color="light"
+          (click)="DiseaseClicked($event, 'Heart Disease')"
+        >
+          Heart Disease</ion-button
+        >
+        <ion-button
+          size="small"
+          color="light"
+          (click)="DiseaseClicked($event, 'Kidney Disease')"
+        >
+          Kidney Disease</ion-button
+        >
+        <ion-button
+          size="small"
+          color="light"
+          (click)="DiseaseClicked($event, 'Lung disease')"
+        >
+          Lung disease</ion-button
+        >
+        <ion-button
+          size="small"
+          color="light"
+          (click)="DiseaseClicked($event, 'Stroke')"
+        >
+          Stroke</ion-button
+        >
+        <ion-button
+          size="small"
+          color="light"
+          (click)="DiseaseClicked($event, 'Reduced Immunity')"
+        >
+          Reduced Immunity</ion-button
+        >
+        <ion-button
+          id="confirmHistory"
+          size="small"
+          color="light"
+          (click)="ConfirmHistoryDisease($event)"
+        >
+          None of these</ion-button
+        >
+      </div>
+    </div>
+
+    <div class="mine messages">
+      <div class="message">
+        Diabetes, High Blood Pressure
+      </div>
+    </div>
+
+    <div class="yours messages">
+      <div class="message">
+        How have your symptoms progressed over the last 48 hrs?
+      </div>
+      <div class="message">
+        <ion-button
+          size="small"
+          color="light"
+          (click)="Progress($event, 'Improved')"
+        >
+          Improved</ion-button
+        >
+        <ion-button
+          size="small"
+          color="light"
+          (click)="Progress($event, 'No Change')"
+        >
+          No Change</ion-button
+        >
+        <ion-button
+          size="small"
+          color="light"
+          (click)="Progress($event, 'Worsen')"
+        >
+          Worsen</ion-button
+        >
+      </div>
+    </div>
+
+    <div class="mine messages">
+      <div class="message"></div>
+    </div>
+  </div>
+
+  <ion-footer id="result">
+    <ion-button expand="block" fill="solid" (click)="ShowModal()">
+      Show Result
     </ion-button>
   </ion-footer>
-  <div class="ion-padding" id="mainChat">
-    <!-- <ion-list>
-      <div id="language">
-        <ion-item class="langauge information" lines="full">
-          <ion-text color="primary">भाषा छनोट गर्नुस</ion-text><br />
-        </ion-item>
-        <ion-item class="langauge information">
-          <ion-button
-            size="small"
-            color="light"
-            (click)="languageClicked('Nepali')"
-            padding
-            >नेपाली</ion-button
-          >
-          <ion-button
-            size="small"
-            color="light"
-            (click)="languageClicked('English')"
-            padding
-            >English</ion-button
-          >
-        </ion-item>
-      </div>
-
-      <div id="langAns">
-        <ion-item class="response">
-          <br />
-          <ion-button
-            item-right
-            size="small"
-            color="primary"
-            class="reply"
-            padding
-            float-right
-            >Nepali</ion-button
-          >
-        </ion-item>
-        <br />
-      </div>
-
-      <div id="ageQues">
-        <ion-item class="information">
-          <ion-text class="textArea" padding>
-            Hello! Our coronavirus disease self assessment scan has been
-            developed on the basis of guidelines from the WHO and MHFW,
-            Government of India. This interaction should not be taken as expert
-            medical advice.
-          </ion-text>
-        </ion-item>
-        <br />
-        <ion-item class="information">
-          <ion-text padding>
-            How old are you?
-          </ion-text>
-        </ion-item>
-        <br />
-      </div>
-
-      <div id="ageInput">
-        <ion-item class="response">
-          <ion-input
-            id="userAge"
-            [(ngModel)]="userage"
-            type="number"
-            placeholder="Enter your age."
-          ></ion-input>
-        </ion-item>
-        <br />
-        <br />
-        <ion-item>
-          <ion-button size="small" (click)="AgeInput()">Done</ion-button>
-        </ion-item>
-      </div>
-
-      <div id="ageAns">
-        <ion-item class="response">
-          <ion-text id="ageAnsText">Age: 22</ion-text>
-        </ion-item>
-        <br />
-      </div>
-
-      <div id="genderQues">
-        <ion-item class="information">
-          <ion-text class="textArea">Please select your gender</ion-text>
-        </ion-item>
-        <ion-item class="information">
-          <ion-button
-            size="small"
-            color="light"
-            (click)="GenderClicked('Female')"
-            >Female</ion-button
-          >
-          <ion-button size="small" color="light" (click)="GenderClicked('Male')"
-            >Male</ion-button
-          >
-          <ion-button
-            size="small"
-            color="light"
-            (click)="GenderClicked('Others')"
-            >Others</ion-button
-          >
-        </ion-item>
-      </div>
-
-      <div id="genderAns">
-        <ion-item class="response">
-          <ion-button id="gender">MALE</ion-button>
-        </ion-item>
-        <br />
-      </div>
-
-      <div id="temperatureQues">
-        <ion-item class="information">
-          <ion-text class="textArea"
-            >Please let us know your current body temperature in degree
-            Fahrenheit (Normal body temperature is 98.6°F):</ion-text
-          >
-        </ion-item>
-        <ion-item class="information">
-          <ion-button
-            (click)="TempClicked('Normal(96°F - 98.6°F)')"
-            size="small"
-            color="light"
-            >Normal(96°F - 98.6°F)</ion-button
-          >
-          <br />
-          <ion-button
-            (click)="TempClicked('Fever (98.6°F - 102°F)')"
-            size="small"
-            color="light"
-            >Fever (98.6°F - 102°F)</ion-button
-          >
-          <br />
-          <ion-button
-            (click)="TempClicked('High Fever (>102°F)')"
-            size="small"
-            color="light"
-            >High Fever (>102°F)</ion-button
-          >
-          <br />
-          <ion-button size="small" color="light">Don't Know</ion-button>
-        </ion-item>
-      </div>
-
-      <div id="temperatureAnswer">
-        <ion-item class="response">
-          <ion-text id="temperature">
-            FEVER
-          </ion-text>
-        </ion-item>
-      </div>
-
-      <div id="symptoms">
-        <ion-item class="information">
-          <ion-text class="textArea">
-            Are you experiencing any of the symptoms below (mark all those
-            applicable)
-          </ion-text>
-        </ion-item>
-        <ion-item class="information">
-          <ion-button size="small" color="light">Dry Cough</ion-button>
-          <br />
-          <ion-button size="small" color="light"
-            >Loss or diminished sense of smell</ion-button
-          >
-          <ion-button size="small" color="light">Sore Throat</ion-button>
-          <br />
-          <ion-button size="small" color="light">Weakness</ion-button>
-          <ion-button size="small" color="light">Weakness</ion-button>
-          <ion-button size="small" color="light">Change in Appetite</ion-button>
-          <ion-button size="small" color="light">None of these</ion-button>
-        </ion-item>
-      </div>
-
-      <div id="symptomAns">
-        <ion-item class="response">
-          <ion-text id="symptomsText">
-            Dry Cough, Loss or diminished sense of smell</ion-text
-          >
-        </ion-item>
-      </div>
-
-      <div id=""></div>
-
-      <ion-button id="modalButton" size="small" (click)="ShowModal()"
-        >Show Modal</ion-button
-      >
-    </ion-list> -->
-  </div>
 </div>
