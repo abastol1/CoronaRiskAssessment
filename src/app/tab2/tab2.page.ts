@@ -10,6 +10,6 @@ export class Tab2Page {
   constructor() { }
 
   ionViewWillEnter() {
-    alert("ENTER");
+    // alert("ENTER");
   }
 }
